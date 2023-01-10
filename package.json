@@ -20,5 +20,8 @@
     "astro-robots-txt": "^0.3.11",
     "astro-seo": "^0.6.1",
     "autoprefixer": "^10.4.13"
+  },
+  "devDependencies": {
+    "sass": "^1.57.1"
   }
 }
