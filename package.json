@@ -1,0 +1,23 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/prefetch": "^0.1.1",
+    "@astrojs/sitemap": "^1.0.0",
+    "astro": "^1.9.0",
+    "astro-compress": "^1.1.24",
+    "astro-imagetools": "^0.6.17",
+    "astro-robots-txt": "^0.3.11",
+    "astro-seo": "^0.6.1",
+    "autoprefixer": "^10.4.13"
+  }
+}

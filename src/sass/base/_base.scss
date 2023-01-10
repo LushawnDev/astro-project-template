@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+
+// Universal reset
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: base-font-size(10px); // 1rem = 10px at default browser font size
+  scroll-behavior: smooth;
+
+  @media only screen and (min-width: $bp-xxl) {
+    font-size: base-font-size(14px);
+  }
+
+  @media only screen and (max-width: $bp-l) {
+    font-size: base-font-size(9px);
+  }
+
+  @media only screen and (max-width: $bp-s) {
+    font-size: base-font-size(8px);
+  }
+}
+
+body {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+picture {
+  display: block !important;
+  height: 100% !important;
+  width: 100%;
+}
+
+picture img {
+  display: block !important;
+  height: 100% !important;
+  max-height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+// Change text selection colour
+::selection {
+  background-color: rgba(var(--color-primary-500), 0.9);
+}

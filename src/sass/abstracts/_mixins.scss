@@ -1,0 +1,20 @@
+@mixin absCenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flexColumnSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-row-gap);
+}
+
+@mixin breakWords {
+  // Make sure long URLs wrap
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}

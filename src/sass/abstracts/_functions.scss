@@ -1,0 +1,11 @@
+@use "sass:math";
+
+// Convert desired pixel size into a percentage based on the browser's default font size of 16px
+@function base-font-size($desired-pixels) {
+  @return calc(math.div($desired-pixels, 16px) * 100%);
+}
+
+// Convert pixels into ems - note the $pixels argument should not actually have the px unit
+@function px-to-em($pixels) {
+  @return calc(math.div($pixels, 16) * 1em);
+}

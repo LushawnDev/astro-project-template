@@ -1,0 +1,69 @@
+// LAYOUT
+:root {
+  --padding-y: 7rem;
+  --padding-x: 5vw;
+  --padding-outer: var(--padding-y) var(--padding-x);
+
+  --nav-height: 10rem;
+
+  --grid-row-gap: 5rem;
+}
+
+// COLOURS
+$colors: (
+  primary: (
+    300: #b2c4ba,
+    500: #4f5f63,
+    700: #3d4a4d,
+  ),
+  secondary: (
+    300: #c46c17,
+    500: #a75c14,
+    700: #844910,
+  ),
+  grey-light: (
+    200: #f3f4f1,
+    400: #ebeee8,
+    600: #dee2d8,
+    800: #c6cdbc,
+  ),
+  grey-dark: (
+    200: #626774,
+    400: #494c56,
+    600: #31343a,
+    800: #232529,
+  ),
+);
+
+:root {
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --color-#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+// SHADOWS
+:root {
+  --shadow-sm: 0 0.5rem 1rem rgba(var(--color-black), 0.2);
+  --shadow-md: 0 1.5rem 2rem rgba(var(--color-black), 0.3);
+  --shadow-lg: 0 2.5rem 4rem rgba(var(--color-black), 0.4);
+  --shadow-xl: 0 4rem 5rem rgba(var(--color-black), 0.6);
+}
+
+// FONT
+:root {
+  --primary-font: "Roboto", sans-serif;
+  --default-font-size: 2rem;
+}
+
+// RESPONSIVE BREAKPOINTS (in px) but converted to em using function
+$bp-xxl: px-to-em(2000);
+$bp-xl: px-to-em(1440);
+$bp-l: px-to-em(1024); // 62.5em;
+$bp-m: px-to-em(820);
+$bp-s: px-to-em(600);
+$bp-xs: px-to-em(360);

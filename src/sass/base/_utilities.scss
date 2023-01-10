@@ -1,0 +1,50 @@
+@use "../abstracts" as *;
+
+// MARGINS
+.mt-lg {
+  margin-top: 8rem !important;
+
+  @media only screen and (max-width: $bp-xl) {
+    margin-top: 6rem !important;
+  }
+}
+
+.mt-md {
+  margin-top: 4rem !important;
+
+  @media only screen and (max-width: $bp-xl) {
+    margin-top: 3rem !important;
+  }
+}
+
+.mt-sm {
+  margin-top: 2rem !important;
+
+  @media only screen and (max-width: $bp-xl) {
+    margin-top: 1.5rem !important;
+  }
+}
+
+.mb-lg {
+  margin-bottom: 8rem !important;
+
+  @media only screen and (max-width: $bp-xl) {
+    margin-bottom: 6rem !important;
+  }
+}
+
+.mb-md {
+  margin-bottom: 4rem !important;
+
+  @media only screen and (max-width: $bp-xl) {
+    margin-bottom: 3rem !important;
+  }
+}
+
+.mb-sm {
+  margin-bottom: 2rem !important;
+
+  @media only screen and (max-width: $bp-xl) {
+    margin-bottom: 1.5rem !important;
+  }
+}
