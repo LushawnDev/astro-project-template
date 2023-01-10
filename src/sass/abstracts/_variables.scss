@@ -58,6 +58,14 @@ $colors: (
 :root {
   --primary-font: "Roboto", sans-serif;
   --default-font-size: 2rem;
+
+  --fs-extra-small: 1.4rem;
+  --fs-small: 1.6rem;
+  --fs-body: 2rem;
+  --fs-heading-4: 2.4rem;
+  --fs-heading-3: 3.5rem;
+  --fs-heading-2: 8rem;
+  --fs-heading-1: 13rem;
 }
 
 // RESPONSIVE BREAKPOINTS (in px) but converted to em using function
