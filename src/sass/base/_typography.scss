@@ -2,9 +2,9 @@
 
 body {
   font-family: var(--primary-font);
-  font-size: var(--default-font-size);
+  font-size: var(--fs-body);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--color-grey-dark-800);
 }
 
@@ -15,58 +15,52 @@ p {
 }
 
 .heading-1 {
-  font-size: 10rem;
-  font-weight: 300;
-  line-height: 1.5;
+  font-size: var(--fs-heading-1);
+  font-weight: 800;
+  font-style: italic;
+  text-transform: lowercase;
+  line-height: 0.85;
+  margin-bottom: var(--space-sm);
 
-  @media only screen and (max-width: $bp-s) {
-    font-size: 9rem;
-  }
-
-  @media only screen and (max-width: $bp-xs) {
-    font-size: 7rem;
+  &--light {
+    color: var(--color-grey-light-800);
   }
 }
 
 .heading-2 {
-  font-size: 5.5rem;
-  font-weight: 300;
-  line-height: 1.5;
-  margin-bottom: 4rem;
+  font-size: var(--fs-heading-2);
+  font-weight: 800;
+  font-style: italic;
+  text-transform: lowercase;
+  line-height: 1;
+  margin-bottom: var(--space-sm);
 
-  &--dark {
-    color: var(--color-grey-dark-800);
-  }
-
-  @media only screen and (max-width: $bp-m) {
-    font-size: 5rem;
-  }
-
-  @media only screen and (max-width: $bp-s) {
-    font-size: 4rem;
-  }
-
-  @media only screen and (max-width: $bp-xs) {
-    font-size: 3.5rem;
+  &--light {
+    color: var(--color-grey-light-800);
   }
 }
 
 .heading-3 {
-  font-size: 3.6rem;
-  font-weight: 400;
-  line-height: 1.5;
-  margin-bottom: 2rem;
+  font-size: var(--fs-heading-3);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
 
-  &--dark {
-    color: var(--color-grey-dark-800);
+  &--light {
+    color: var(--color-grey-light-800);
   }
+}
 
-  @media only screen and (max-width: $bp-s) {
-    font-size: 3rem;
-  }
+.heading-4 {
+  font-size: var(--fs-heading-4);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
 
-  @media only screen and (max-width: $bp-xs) {
-    font-size: 2.8rem;
+  &--light {
+    color: var(--color-grey-light-800);
   }
 }
 
@@ -91,7 +85,6 @@ p {
 
   &:hover,
   &:focus {
-    // color: $color-secondary-dark;
     background-size: 100% 3px;
   }
 
