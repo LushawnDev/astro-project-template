@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 @keyframes moveInTop {
   0% {
     opacity: 0;

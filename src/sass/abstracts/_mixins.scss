@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 @mixin absCenter {
   position: absolute;
   left: 50%;

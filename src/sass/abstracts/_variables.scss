@@ -1,4 +1,6 @@
 // LAYOUT
+@use "./functions" as *;
+
 :root {
   --padding-y: 7rem;
   --padding-x: 5vw;
@@ -15,52 +17,141 @@
 // COLOURS
 $colors: (
   primary: (
-    300: #b2c4ba,
-    500: #4f5f63,
-    700: #3d4a4d,
+    300: #80b5ff,
+    500: #006aff,
+    700: #002a66,
   ),
   secondary: (
-    300: #c46c17,
-    500: #a75c14,
-    700: #844910,
+    300: #ffaa33,
+    500: #ff9500,
+    700: #cc7700,
   ),
   grey-light: (
-    200: #f3f4f1,
-    400: #ebeee8,
-    600: #dee2d8,
-    800: #c6cdbc,
+    200: #f7f7f7,
+    400: #eeeeee,
+    600: #bdbdbd,
+    800: #a2a2a7,
   ),
   grey-dark: (
-    200: #626774,
-    400: #494c56,
-    600: #31343a,
-    800: #232529,
+    200: #999999,
+    400: #777777,
+    600: #444444,
+    800: #212121,
+  ),
+);
+// RGBS
+$rgbs: (
+  primary: (
+    300: (
+      128,
+      181,
+      255,
+    ),
+    500: (
+      0,
+      106,
+      255,
+    ),
+    700: (
+      0,
+      42,
+      102,
+    ),
+  ),
+  secondary: (
+    300: (
+      255,
+      170,
+      51,
+    ),
+    500: (
+      255,
+      149,
+      0,
+    ),
+    700: (
+      204,
+      119,
+      0,
+    ),
+  ),
+  grey-light: (
+    200: (
+      247,
+      247,
+      247,
+    ),
+    400: (
+      238,
+      238,
+      238,
+    ),
+    600: (
+      189,
+      189,
+      189,
+    ),
+    800: (
+      162,
+      162,
+      167,
+    ),
+  ),
+  grey-dark: (
+    200: (
+      153,
+      153,
+      153,
+    ),
+    400: (
+      119,
+      119,
+      119,
+    ),
+    600: (
+      68,
+      68,
+      68,
+    ),
+    800: (
+      33,
+      33,
+      33,
+    ),
   ),
 );
 
 :root {
-  @each $color, $shades in $colors {
+  @each $rgb, $shades in $rgbs {
     @each $shade, $value in $shades {
-      --color-#{$color}-#{$shade}: #{$value};
+      --color-#{$rgb}-#{$shade}: rgb(#{$value});
     }
   }
 
-  --color-black: #000000;
-  --color-white: #ffffff;
+  --color-black: rgb(0, 0, 0);
+  --color-white: rgb(255, 255, 255);
+  --rgb-black: 0, 0, 0;
+  --rgb-white: 255, 255, 255;
+
+  @each $rgb, $shades in $rgbs {
+    @each $shade, $value in $shades {
+      --rgb-#{$rgb}-#{$shade}: #{$value};
+    }
+  }
 }
 
 // SHADOWS
 :root {
-  --shadow-sm: 0 0.5rem 1rem rgba(var(--color-black), 0.2);
-  --shadow-md: 0 1.5rem 2rem rgba(var(--color-black), 0.3);
-  --shadow-lg: 0 2.5rem 4rem rgba(var(--color-black), 0.4);
-  --shadow-xl: 0 4rem 5rem rgba(var(--color-black), 0.6);
+  --shadow-xs: 0 0.5rem 1rem rgba(var(--rgb-black), 0.1);
+  --shadow-sm: 0 0.5rem 1rem rgba(var(--rgb-black), 0.2);
+  --shadow-md: 0 1.5rem 4rem rgba(var(--rgb-black), 0.4);
+  --shadow-lg: 0 2.5rem 4rem rgba(var(--rgb-black), 0.4);
+  --shadow-xl: 0 4rem 5rem rgba(var(--rgb-black), 0.6);
 }
 
 // FONT
 :root {
   --primary-font: "Roboto", sans-serif;
-  --default-font-size: 2rem;
 
   --fs-extra-small: 1.4rem;
   --fs-small: 1.6rem;
