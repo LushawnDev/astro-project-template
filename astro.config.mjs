@@ -3,7 +3,6 @@ import { defineConfig } from "astro/config";
 import { astroImageTools } from "astro-imagetools";
 import robotsTxt from "astro-robots-txt";
 
-// https://astro.build/config
 import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
@@ -13,12 +12,11 @@ import sitemap from "@astrojs/sitemap";
 import compress from "astro-compress";
 
 // https://astro.build/config
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [
-    astroImageTools,
-    prefetch(),
-    sitemap(),
-    robotsTxt(),
-    compress({ img: false, svg: false }),
-  ],
+  integrations: [astroImageTools, prefetch(), sitemap(), robotsTxt(), compress({
+    img: false,
+    svg: false
+  })]
 });
