@@ -15,11 +15,15 @@ import Header from "../components/Nav.astro";
 // PROPS
 export interface Props {
   title?: string;
+  titleFollower?: string;
   description?: string;
 }
 
-const { title = "Project Title", description = "Project description" } =
-  Astro.props as Props;
+const {
+  title = "Project Title",
+  titleFollower = "Title Follower",
+  description = "Project description",
+} = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -45,7 +49,7 @@ const { title = "Project Title", description = "Project description" } =
     <slot name="headSeo">
       <SEO
         slot="head"
-        title={title}
+        title={`${title} ${titleFollower}`}
         description={description}
         openGraph={{
           basic: {
