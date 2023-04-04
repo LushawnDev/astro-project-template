@@ -51,7 +51,21 @@ picture img {
   max-height: 100vh;
   width: 100%;
   object-fit: cover;
-  border-radius: 5px;
+}
+
+hr {
+  width: 80%;
+  border: 0;
+  height: 1px;
+  background-color: rgba(var(--rgb-grey-dark-200), 0.8);
+}
+
+// Prefers reduced motion
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition-duration: 0s !important;
+  }
 }
 
 // Change text selection colour
