@@ -1,24 +1,42 @@
-// LAYOUT
 @use "./functions" as *;
 
+// RESPONSIVE BREAKPOINTS (in px) but converted to em using function
+$bp-xxl: px-to-em(1920);
+$bp-xl: px-to-em(1440);
+$bp-l: px-to-em(1060); // 62.5em;
+$bp-m: px-to-em(820);
+$bp-s: px-to-em(600);
+$bp-xs: px-to-em(360);
+
+// LAYOUT
 :root {
   --padding-y: 7rem;
-  --padding-x: 5vw;
+  --padding-x: 9rem;
   --padding-outer: var(--padding-y) var(--padding-x);
 
-  --nav-height: 10rem;
+  --nav-height: 6rem;
 
   --space-lg: 7rem;
   --space-md: 5rem;
   --space-sm: 3rem;
   --space-xs: 2rem;
+  --space-xxs: 1rem;
+
+  @media only screen and (max-width: $bp-l) {
+    --padding-x: 7rem;
+  }
+  @media only screen and (max-width: $bp-s) {
+    --padding-x: 3rem;
+  }
 }
 
 // COLOURS
 $colors: (
   primary: (
     300: #80b5ff,
+    400: #4090ff,
     500: #006aff,
+    600: #004ab3,
     700: #002a66,
   ),
   secondary: (
@@ -47,10 +65,20 @@ $rgbs: (
       181,
       255,
     ),
+    400: (
+      64,
+      144,
+      255,
+    ),
     500: (
       0,
       106,
       255,
+    ),
+    600: (
+      0,
+      74,
+      179,
     ),
     700: (
       0,
@@ -140,32 +168,53 @@ $rgbs: (
   }
 }
 
-// SHADOWS
+// SHADOWS and corners
 :root {
-  --shadow-xs: 0 0.5rem 1rem rgba(var(--rgb-black), 0.1);
-  --shadow-sm: 0 0.5rem 1rem rgba(var(--rgb-black), 0.2);
+  --shadow-xs: 0 0.5rem 1rem rgba(var(--rgb-black), 0.2);
+  --shadow-sm: 0 0.5rem 1.4rem rgba(var(--rgb-black), 0.25);
   --shadow-md: 0 1.5rem 4rem rgba(var(--rgb-black), 0.4);
   --shadow-lg: 0 2.5rem 4rem rgba(var(--rgb-black), 0.4);
   --shadow-xl: 0 4rem 5rem rgba(var(--rgb-black), 0.6);
+
+  --radius-sm: 3px;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
 }
 
-// FONT
+// FONTS AND ICONS
 :root {
-  --primary-font: "Roboto", sans-serif;
+  --primary-font: "Montserrat", sans-serif;
 
   --fs-extra-small: 1.4rem;
   --fs-small: 1.6rem;
-  --fs-body: 2rem;
-  --fs-heading-4: 2.4rem;
-  --fs-heading-3: 3.5rem;
-  --fs-heading-2: 8rem;
-  --fs-heading-1: 13rem;
-}
+  --fs-body: 1.8rem;
+  --fs-heading-4: 2.2rem;
+  --fs-heading-3: 3rem;
+  --fs-heading-2: 5.5rem;
+  --fs-heading-1: 11rem;
 
-// RESPONSIVE BREAKPOINTS (in px) but converted to em using function
-$bp-xxl: px-to-em(2000);
-$bp-xl: px-to-em(1440);
-$bp-l: px-to-em(1024); // 62.5em;
-$bp-m: px-to-em(820);
-$bp-s: px-to-em(600);
-$bp-xs: px-to-em(360);
+  --icon-size-sm: 3rem;
+
+  @media only screen and (min-width: $bp-xxl) {
+    --fs-heading-4: 2.3rem;
+    --fs-heading-3: 3.5rem;
+    --fs-heading-2: 6rem;
+    --fs-heading-1: 12rem;
+  }
+
+  @media only screen and (max-width: $bp-m) {
+    --fs-heading-1: 8rem;
+    --fs-heading-2: 4.7rem;
+    --fs-heading-4: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-s) {
+    --fs-heading-1: 7rem;
+    --fs-heading-2: 4rem;
+  }
+
+  @media only screen and (max-width: $bp-xs) {
+    --fs-heading-1: 5.5rem;
+    --fs-heading-2: 3.8rem;
+  }
+}

@@ -1,2 +1,16 @@
 @use "./abstracts" as *;
 @use "./base/" as *;
+
+main.legal .legal {
+  background: var(--color-grey-light-400);
+  padding: var(--padding-outer);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+
+  &__text-box {
+    max-width: 80rem;
+  }
+}

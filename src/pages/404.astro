@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Error 404: Page Not Found!">
+  <main class="confirmation-page" slot="main">
+    <section>
+      <h1 class="heading-1">Oops... This shouldn't have happened.</h1>
+      <p>
+        <strong
+          >Unfortunately the page you're looking in the browser address bar,
+          either no longer exists or has moved.</strong
+        > (Or it was your fault and you made a mistake...)<br /><br />
+
+        Your best best is going back to the homepage and figuring out where to
+        go next. But don't you worry, I'll be contacting my web developer about
+        this issue!
+      </p>
+      <a href="/">Back home</a>
+    </section>
+  </main>
+</Layout>
+
+<style lang="scss" is:global>
+  main.confirmation-page section {
+    min-height: 50vh;
+    padding: var(--padding-outer);
+
+    & > *:not(:last-child) {
+      margin-bottom: var(--space-md);
+    }
+  }
+</style>
