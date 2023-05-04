@@ -1,0 +1,72 @@
+---
+// INTEGRATIONS
+// @ts-ignore
+import { ImageSupportDetection } from "astro-imagetools/components";
+// @ts-ignore
+import { SEO } from "astro-seo";
+
+// STYLES
+import "../styles/global.css";
+
+// PROPS
+export interface BaseProps {
+  title?: string;
+  titleFollower?: string;
+  description?: string;
+  seo?: object;
+}
+
+const {
+  title = "Project Title",
+  titleFollower = "Title Follower",
+  description = "Project description",
+  ...seo
+} = Astro.props as BaseProps;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+
+    <ImageSupportDetection />
+
+    <slot name="headSeo">
+      <SEO
+        slot="head"
+        title={`${title} ${titleFollower}`}
+        description={description}
+        openGraph={{
+          basic: {
+            title:
+              "Lucian Chevallier Web Design and Development - London based web developer",
+            type: "website",
+            image: "/thumbnail.png",
+          },
+          image: {
+            alt: "Landing page of London based web developer - Lucian Chevallier",
+            type: "image/jpg",
+          },
+        }}
+        {...seo}
+      />
+    </slot>
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

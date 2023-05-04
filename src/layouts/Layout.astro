@@ -1,74 +1,15 @@
 ---
-// INTEGRATIONS
-// @ts-ignore
-import { ImageSupportDetection } from "astro-imagetools/components";
-// @ts-ignore
-import { SEO } from "astro-seo";
+import Footer from "../components/layout/Footer.astro";
+import Nav from "../components/layout/Nav.astro";
+import Base, { BaseProps } from "./Base.astro";
 
-// STYLES
-import "../styles/global.css";
+export interface Props extends BaseProps {}
 
-// COMPONENTS
-import Footer from "../components/Footer.astro";
-import Header from "../components/Nav.astro";
-
-// PROPS
-export interface Props {
-  title?: string;
-  titleFollower?: string;
-  description?: string;
-}
-
-const {
-  title = "Project Title",
-  titleFollower = "Title Follower",
-  description = "Project description",
-} = Astro.props as Props;
+const { ...props } = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
-
-    <ImageSupportDetection />
-
-    <slot name="headSeo">
-      <SEO
-        slot="head"
-        title={`${title} ${titleFollower}`}
-        description={description}
-        openGraph={{
-          basic: {
-            title: "OG Project Title",
-            type: "website",
-            image: "/thumbnail.jpg",
-          },
-          image: {
-            alt: "OG image thumbnail alt text",
-            type: "image/jpg",
-          },
-        }}
-      />
-    </slot>
-  </head>
-
-  <body>
-    <Header />
-    <slot name="main" />
-    <Footer />
-  </body>
-</html>
+<Base {...props}>
+  <Nav />
+  <slot name="main" />
+  <Footer />
+</Base>
