@@ -1,9 +1,9 @@
 @use "../abstracts" as *;
 
-@keyframes moveInTop {
+@keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(-10rem);
+    transform: translateY(10rem);
   }
 
   100% {
@@ -12,10 +12,10 @@
   }
 }
 
-@keyframes moveInBottom {
+@keyframes moveInTop {
   0% {
     opacity: 0;
-    transform: translateY(10rem);
+    transform: translateY(-10rem);
   }
 
   100% {
@@ -86,6 +86,20 @@
   }
 }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes shake {
   0% {
     transform: rotate(-7deg);
@@ -97,5 +111,70 @@
 
   100% {
     transform: rotate(-7deg);
+  }
+}
+
+@keyframes flyAway {
+  0% {
+    transform: translate(0);
+  }
+
+  30% {
+    transform: translate(4rem, -6rem) rotate(-20deg);
+    fill: var(--color-secondary-500);
+    color: var(--color-secondary-500);
+  }
+
+  40% {
+    transform: translate(4rem, -6rem) rotate(0deg);
+    fill: var(--color-secondary-500);
+    color: var(--color-secondary-500);
+  }
+
+  100% {
+    fill: transparent;
+    color: transparent;
+    transform: translate(33vw, -20rem) rotate(10deg);
+  }
+}
+
+@keyframes bob {
+  0% {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(2px, 6px);
+  }
+
+  75% {
+    transform: translate(-1px, -5px);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: left;
+  }
+
+  25% {
+    background-position: right;
+  }
+  50% {
+    background-position: right;
+  }
+
+  75% {
+    background-position: left;
+  }
+}
+
+@keyframes gradientMoveBg {
+  0% {
+    background-position: top left;
+  }
+
+  100% {
+    background-position: bottom right;
   }
 }

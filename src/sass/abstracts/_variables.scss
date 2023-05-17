@@ -1,12 +1,5 @@
 @use "./functions" as *;
-
-// RESPONSIVE BREAKPOINTS (in px) but converted to em using function
-$bp-xxl: px-to-em(1920);
-$bp-xl: px-to-em(1440);
-$bp-l: px-to-em(1060); // 62.5em;
-$bp-m: px-to-em(820);
-$bp-s: px-to-em(600);
-$bp-xs: px-to-em(360);
+@use "./breakpoints" as *;
 
 // LAYOUT
 :root {
@@ -170,11 +163,11 @@ $rgbs: (
 
 // SHADOWS and corners
 :root {
-  --shadow-xs: 0 0.5rem 1rem rgba(var(--rgb-black), 0.2);
-  --shadow-sm: 0 0.5rem 1.4rem rgba(var(--rgb-black), 0.25);
-  --shadow-md: 0 1.5rem 4rem rgba(var(--rgb-black), 0.4);
-  --shadow-lg: 0 2.5rem 4rem rgba(var(--rgb-black), 0.4);
-  --shadow-xl: 0 4rem 5rem rgba(var(--rgb-black), 0.6);
+  --shadow-xs: 0 0rem 1rem rgba(var(--rgb-black), 0.15);
+  --shadow-sm: 0 0.2em 1.5rem rgba(var(--rgb-black), 0.2);
+  --shadow-md: 0 0.4rem 2rem rgba(var(--rgb-black), 0.3);
+  --shadow-lg: 0 0.4rem 2.5rem rgba(var(--rgb-black), 0.35);
+  --shadow-xl: 0 0.8rem 3rem rgba(var(--rgb-black), 0.4);
 
   --radius-sm: 3px;
   --radius-md: 0.5rem;
@@ -205,16 +198,48 @@ $rgbs: (
   @media only screen and (max-width: $bp-m) {
     --fs-heading-1: 8rem;
     --fs-heading-2: 4.7rem;
-    --fs-heading-4: 2rem;
   }
 
   @media only screen and (max-width: $bp-s) {
-    --fs-heading-1: 7rem;
+    --fs-heading-1: 6rem;
     --fs-heading-2: 4rem;
+    --fs-heading-3: 2.6rem;
   }
 
   @media only screen and (max-width: $bp-xs) {
     --fs-heading-1: 5.5rem;
     --fs-heading-2: 3.8rem;
+    --fs-body: 13px;
+    --fs-small: 12px;
+    --fs-extra-small: 11px;
   }
+}
+
+// COOKIE CONSENT BANNER
+:root {
+  --cc-font-family: var(--primary-font) !important;
+  --cc-font-size: 14px !important;
+  --cc-bg: var(--color-grey-dark-800) !important;
+  --cc-z-index: 2147483647 !important;
+  --cc-text: var(--color-grey-light-200) !important;
+  --cc-btn-primary-bg: var(--color-primary-300) !important;
+  --cc-btn-primary-text: var(--cc-bg) !important;
+  --cc-btn-primary-hover-bg: var(--color-primary-700) !important;
+  --cc-btn-secondary-bg: var(--color-grey-light-400) !important;
+  --cc-btn-secondary-text: var(--cc-bg) !important;
+  --cc-btn-secondary-hover-bg: var(--color-grey-light-600) !important;
+
+  --cc-toggle-bg-off: #919ea6 !important;
+  --cc-toggle-bg-on: var(--cc-btn-primary-bg) !important;
+  --cc-toggle-bg-readonly: #d5dee2 !important;
+  --cc-toggle-knob-bg: var(--color-grey-light-200) !important;
+  --cc-toggle-knob-icon-color: var(--color-grey-light-200) !important;
+  --cc-block-text: var(--cc-text) !important;
+  --cc-cookie-category-block-bg: var(--color-grey-dark-600) !important;
+  --cc-cookie-category-block-bg-hover: var(--color-grey-dark-400) !important;
+  --cc-section-border: var(--color-grey-light-200) !important;
+  --cc-cookie-table-border: #e9edf2 !important;
+  --cc-overlay-bg: rgb(4, 6, 8) !important;
+  --cc-webkit-scrollbar-bg: #cfd5db !important;
+  --cc-webkit-scrollbar-bg-hover: #9199a0 !important;
 }

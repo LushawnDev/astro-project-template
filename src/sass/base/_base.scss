@@ -14,24 +14,28 @@ html {
   scroll-behavior: smooth;
 
   @media only screen and (min-width: $bp-xxl) {
-    font-size: base-font-size(14px);
+    font-size: base-font-size(11px);
   }
 
-  @media only screen and (max-width: $bp-l) {
+  @media only screen and (max-width: $bp-m) {
     font-size: base-font-size(9px);
   }
 
   @media only screen and (max-width: $bp-s) {
-    font-size: base-font-size(8px);
+    font-size: base-font-size(8.5px);
+  }
+
+  @media only screen and (max-width: $bp-xs) {
+    font-size: base-font-size(7px);
   }
 }
 
 body {
   box-sizing: border-box;
-}
 
-svg {
-  width: 10rem;
+  &.body--freeze {
+    overflow: hidden;
+  }
 }
 
 img {
@@ -53,6 +57,11 @@ picture img {
   object-fit: cover;
 }
 
+svg {
+  height: var(--icon-size-sm);
+  width: var(--icon-size-sm);
+}
+
 hr {
   width: 80%;
   border: 0;
@@ -70,5 +79,6 @@ hr {
 
 // Change text selection colour
 ::selection {
-  background-color: rgba(var(--color-primary-500), 0.9);
+  background-color: var(--color-secondary-700);
+  color: var(--color-grey-light-200);
 }

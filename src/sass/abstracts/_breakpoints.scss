@@ -1,0 +1,9 @@
+@use "./functions" as *;
+
+// RESPONSIVE BREAKPOINTS (in px) but converted to em using function
+$bp-xxl: px-to-em(1920);
+$bp-xl: px-to-em(1440);
+$bp-l: px-to-em(1060); // 62.5em;
+$bp-m: px-to-em(820);
+$bp-s: px-to-em(600);
+$bp-xs: px-to-em(360);

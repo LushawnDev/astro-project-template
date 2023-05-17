@@ -18,6 +18,14 @@ export default defineConfig({
     compress({
       img: false,
       svg: false,
+      exclude: ["global.css"],
+      // css: {
+      //   restructure: false,
+      //   forceMediaMerge: false,
+      // },
+      // html: {
+      //   minifyCSS: false,
+      // },
     }),
   ],
 });

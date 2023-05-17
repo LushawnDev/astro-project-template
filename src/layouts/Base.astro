@@ -1,12 +1,7 @@
 ---
 // INTEGRATIONS
-// @ts-ignore
 import { ImageSupportDetection } from "astro-imagetools/components";
-// @ts-ignore
 import { SEO } from "astro-seo";
-
-// STYLES
-import "../styles/global.css";
 
 // PROPS
 export interface BaseProps {
@@ -35,9 +30,13 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/global.css" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/favicon.png" type="image/png" />

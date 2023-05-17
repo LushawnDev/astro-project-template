@@ -4,7 +4,7 @@ body {
   font-family: var(--primary-font);
   font-size: var(--fs-body);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--color-grey-dark-800);
 }
 
@@ -14,63 +14,56 @@ p {
   }
 }
 
-.heading-1 {
+h1,
+h2,
+h3,
+h4 {
+  scroll-margin-top: calc(var(--nav-height) + 4rem);
+}
+
+.heading-1,
+.heading-1--children h1 {
   font-size: var(--fs-heading-1);
-  font-weight: 800;
-  font-style: italic;
-  text-transform: lowercase;
-  line-height: 0.85;
-  margin-bottom: var(--space-sm);
-
-  &--light {
-    color: var(--color-grey-light-800);
-  }
-}
-
-.heading-2 {
-  font-size: var(--fs-heading-2);
-  font-weight: 800;
-  font-style: italic;
-  text-transform: lowercase;
+  font-weight: 600;
   line-height: 1;
-  margin-bottom: var(--space-sm);
-
-  &--light {
-    color: var(--color-grey-light-800);
-  }
 }
 
-.heading-3 {
+.heading-2,
+.heading-2--children h2 {
+  font-size: var(--fs-heading-2);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: var(--space-sm);
+}
+
+.heading-3,
+.heading-3--children h3 {
   font-size: var(--fs-heading-3);
   font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1;
+  line-height: 1.4;
   margin-bottom: var(--space-xs);
-
-  &--light {
-    color: var(--color-grey-light-800);
-  }
 }
 
-.heading-4 {
+.heading-4,
+.heading-4--children h4 {
   font-size: var(--fs-heading-4);
   font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1;
+  line-height: 1.4;
   margin-bottom: var(--space-xs);
-
-  &--light {
-    color: var(--color-grey-light-800);
-  }
 }
 
-.link {
-  color: var(--color-secondary-700);
+.secondary-text {
+  color: var(--color-secondary-500) !important;
+}
+
+.link,
+.link--children a {
+  color: var(--color-secondary-500);
   position: relative;
   text-decoration: none;
   background-image: linear-gradient(
     to right,
-    var(--color-secondary-500),
+    var(--color-secondary-300),
     var(--color-secondary-700)
   );
   background-size: 0 3px;
@@ -80,9 +73,6 @@ p {
   transition: all 0.4s;
   padding-bottom: 0.4rem;
 
-  // Make sure long URLs wrap
-  @include breakWords;
-
   &:hover,
   &:focus {
     background-size: 100% 3px;
@@ -91,4 +81,29 @@ p {
   &--bold {
     font-weight: 600;
   }
+
+  &--break {
+    @include breakWords;
+  }
+
+  &:not(.footer__link) svg {
+    position: relative;
+    top: 0.25em;
+    height: 1.2em;
+    width: 1.2em;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    to right,
+    var(--color-primary-700),
+    var(--color-primary-400),
+    var(--color-primary-700)
+  );
+  background-size: 150%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  animation: gradientMove 4s ease-in-out infinite;
 }
