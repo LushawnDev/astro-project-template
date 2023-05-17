@@ -1,19 +1,22 @@
 {
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
+  // LIVE SASS COMPILER
   "liveSassCompile.settings.formats": [
     {
-      "format": "expanded",
+      "format": "compressed",
       "extensionName": ".css",
-      "savePath": "/src/styles"
+      "savePath": "/public/styles"
     }
   ],
   "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
   "liveSassCompile.settings.generateMap": false,
-  // "liveSassCompile.settings.autoprefix": ["last 2 versions"],
+  "liveSassCompile.settings.autoprefix": ["defaults"],
   "liveServer.settings.port": 3000,
+  // VS CODE SETTINGS
   "search.useIgnoreFiles": true,
+  // FILE SETTINGS
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
   "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
